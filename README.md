@@ -38,6 +38,8 @@ Here we are doing three things:
 2. Calling the modularity module on the 'routes' directory
 3. Using the updated Express router in our application
 
+Note: The directory containing the routes (i.e. 'routes' above) needs to exist in the root directory of the application.
+
 ## People
 
 The author and maintainer of **express-modularity** is [Tyler Willis](https://tylerewillis.com).
