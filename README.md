@@ -26,7 +26,7 @@ npm install express-modularity
 
 Here is a basic example where we've determined that our route directory is 'routes' and is located at the base directory of our application:
 
-```
+```javascript
 const modularity = require('./express-modularity')
 modularity.call('routes')
 app.use(modularity.router)
