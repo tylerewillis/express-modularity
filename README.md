@@ -22,7 +22,7 @@ npm install express-modularity
 
 ## Quick Start
 
-**express-modularity**, as it exists in version 1.0.0, simply allows you to create multiple route files within a predetermined directory of your application.
+With **express-modularity**, you can create multiple route files within a predetermined directory of your application and easily include global middleware functions.
 
 Here is a basic example where we've determined that our route directory is 'routes' and is located at the base directory of our application:
 
@@ -56,9 +56,9 @@ my-application/
 
 All subdirectories inside of 'routes' (or whatever you choose to call your routes directory) will be treated as nested directories (see below) except for the following:
 
-* middleware
-* components
-* global
+	* middleware
+	* components
+	* global
 
 These three directories will be ignored and can be used for your middleware and other components to be included in your route files.
 
@@ -83,14 +83,14 @@ my-application/
 
 the home, about and contact route files will be accessible directly after the top-level domain name:
 
-* example.com
-* example.com/about
-* example.com/contact
+	* example.com
+	* example.com/about
+	* example.com/contact
 
 but the login and pages routes will only be accessible via the directory **admin** after the TLD:
 
-* example.com/admin/login
-* example.com/admin/pages
+	* example.com/admin/login
+	* example.com/admin/pages
 
 You can add as many of these nested directories as you'd like.
 
@@ -124,9 +124,9 @@ In the **admin** directory, restrict.js is declared as global middleware and wil
 
 Here are a few things to keep in mind when using **express-modularity** in your application:
 
-1. Other than nested directories requiring the directory name, the file names **do not** determine the front-end URLs. For example, the file 'about.js' will be accessed by the Express routing determined in the file, not by the name of the file 'about' like 'example.com/about'. Because of this, you can include multiple Express routes inside of files as they are just a way to modularize your code.
+1. Other than nested directories requiring the directory name, the file names **do not** determine the front-end URLs. For example, the file 'about.js' will be accessed by the Express routing determined in the file, not by the name of the file 'about' like 'example.com/about'. Because of this, you can include multiple Express routes inside files as they are just a way to modularize your code.
 2. File names starting with a period (.) will be ignored. Everything else will be considered.
-3. Keep in mind that all global middleware included will also be included in all routes included within sub-nested directories.
+3. Keep in mind that all global middleware called in a directory will also be used in all routes included within sub-nested directories.
 
 ## People
 
