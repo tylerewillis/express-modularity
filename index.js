@@ -19,11 +19,13 @@ function getGlobalMW(directory) {
 	let path = getPath(directory + '/global')
 	let urlDirectory = getUrlDirectory(directory)
 
-	require("fs").readdirSync(path, {withFileTypes: true}).forEach(function(file) {
-	  if (!file.isDirectory() && file.name.charAt(0) !== '.') {
-  		router.use(urlDirectory, require(path + '/' + file.name))
-	  }
-	})
+	try {
+		require("fs").readdirSync(path, {withFileTypes: true}).forEach(function(file) {
+		  if (!file.isDirectory() && file.name.charAt(0) !== '.') {
+	  		router.use(urlDirectory, require(path + '/' + file.name))
+		  }
+		})
+	} catch(e) {}
 }
 
 
