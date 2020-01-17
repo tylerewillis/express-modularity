@@ -1,6 +1,6 @@
 {
   "name": "express-modularity",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A React-like modular routing solution for Express.js applications.",
   "author": "Tyler Willis (https://tylerewillis.com)",
   "license": "ISC",
