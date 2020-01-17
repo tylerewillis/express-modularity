@@ -130,4 +130,4 @@ Here are a few things to keep in mind when using **express-modularity** in your 
 
 ## People
 
-The author and maintainer of **express-modularity** is [Tyler Willis](https://tylerewillis.com).
+The author and maintainer of **express-modularity** is [Tyler Willis](https://tylerewillis.com). Support me [on Patreon](https://www.patreon.com/tylerwillis)!
