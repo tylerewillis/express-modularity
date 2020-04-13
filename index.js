@@ -40,7 +40,7 @@ function call(directory) {
 	// Each file in directory
 	require("fs").readdirSync(path, {withFileTypes: true}).forEach(function(file) {
 	  if (file.isDirectory()) { // If directory and not middleware or components, recurse on directory
-	  	if (!ignoreDirectories.includes(file.name)) call(directory + '/' + file.name)
+	  	if (!ignoreDirectories.includes(file.name) && file.name.charAt(0) !== '_') call(directory + '/' + file.name)
 	  } else { // If not directory but file not starting with a period, require and use with router
 	  	if (file.name.charAt(0) !== '.') router.use(urlDirectory, require(path + '/' + file.name))
 	  }
