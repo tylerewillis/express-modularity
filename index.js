@@ -16,16 +16,18 @@ function getUrlDirectory(directory) {
 
 function getGlobalMW(directory) {
 
-	let path = getPath(directory + '/global')
 	let urlDirectory = getUrlDirectory(directory)
+	let paths = [getPath(directory + '/global'), getPath(directory + '/_global')]
 
-	try {
-		require("fs").readdirSync(path, {withFileTypes: true}).forEach(function(file) {
-		  if (!file.isDirectory() && file.name.charAt(0) !== '.') {
-	  		router.use(urlDirectory, require(path + '/' + file.name))
-		  }
-		})
-	} catch(e) {}
+	paths.forEach(path => {
+		try {
+			require("fs").readdirSync(path, {withFileTypes: true}).forEach(function(file) {
+			  if (!file.isDirectory() && file.name.charAt(0) !== '.') {
+		  		router.use(urlDirectory, require(path + '/' + file.name))
+			  }
+			})
+		} catch(e) {}
+	})
 }
 
 
