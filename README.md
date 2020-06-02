@@ -59,6 +59,7 @@ All subdirectories inside of 'routes' (or whatever you choose to call your route
 	* middleware
 	* components
 	* global
+	* any directory beginning with _
 
 These three directories will be ignored and can be used for your middleware and other components to be included in your route files.
 
@@ -96,7 +97,7 @@ You can add as many of these nested directories as you'd like.
 
 ## Global Middleware
 
-If you have middleware that you'd like to run in every route, you can include it as global middleware by exporting it as a module within the **global** directory.
+If you have middleware that you'd like to run in every route, you can include it as global middleware by exporting it as a module within the **global** directory (NEW as of 1.1.8: **global** OR **_global**).
 
 For example, with a directory structure like this:
 
